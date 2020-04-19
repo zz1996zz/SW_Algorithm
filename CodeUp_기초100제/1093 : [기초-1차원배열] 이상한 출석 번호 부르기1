@@ -1,0 +1,13 @@
+a=int(input())
+b=input().split()
+c=list(map(int,b))
+
+arr=[]
+for i in range(24):
+    arr.append(0)
+
+for j in range(a):
+    arr[c[j]]+=1
+
+for k in range(1,24):
+    print(arr[k],end=' ')
