@@ -1,0 +1,10 @@
+a=int(input())
+b=input().split()
+c=list(map(int,b))
+temp=23
+
+for i in range(a):
+    if temp>c[i]:
+        temp=c[i]
+        
+print(temp)
