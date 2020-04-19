@@ -1,0 +1,4 @@
+h,b,c,s=map(int,input().split(' '))
+
+x=h*b*c*s
+print("{0:.1f} MB" .format(x/8/1024/1024))
