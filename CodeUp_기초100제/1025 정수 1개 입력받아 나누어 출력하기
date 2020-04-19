@@ -1,0 +1,7 @@
+x = input()
+
+print("[" + str(int(x[0])*10000) + "]")
+print("[" + str(int(x[1])*1000) + "]")
+print("[" + str(int(x[2])*100) + "]")
+print("[" + str(int(x[3])*10) + "]")
+print("[" + str(int(x[4])) + "]")
