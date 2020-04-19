@@ -1,0 +1,9 @@
+x,y,z = input().split(' ')
+
+x = int(x)
+y = int(y)
+z = int(z)
+w = x+y+z
+
+print(w)
+print("%.1f" %(w/3))
