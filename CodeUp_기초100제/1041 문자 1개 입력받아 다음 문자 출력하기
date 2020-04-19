@@ -1,0 +1,4 @@
+x = input()
+y = ord(x)
+y += 1
+print(chr(y))
