@@ -1,0 +1,9 @@
+a=int(input())
+sum=0
+x=0
+
+while x<=a:
+    if x%2==0:
+        sum+=x
+    x+=1
+print(sum)
