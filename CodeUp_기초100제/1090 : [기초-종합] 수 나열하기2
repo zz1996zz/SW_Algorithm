@@ -1,0 +1,9 @@
+a,r,n = map(int,input().split(' '))
+count=1
+
+while True:
+    a*=r
+    count+=1
+    if count==n:
+        break
+print(a)
