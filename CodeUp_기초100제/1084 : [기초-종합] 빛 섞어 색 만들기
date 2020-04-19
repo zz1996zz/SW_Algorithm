@@ -1,0 +1,9 @@
+a,b,c = map(int,input().split(' '))
+count=0
+
+for x in range(a):
+    for y in range(b):
+        for z in range(c):
+            print("{0} {1} {2}" .format(x,y,z))
+            count+=1
+print(count)
