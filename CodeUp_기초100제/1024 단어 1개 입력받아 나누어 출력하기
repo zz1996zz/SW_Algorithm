@@ -1,0 +1,4 @@
+x = input()
+
+for s in x:
+    print("\'%c\'" %s)
