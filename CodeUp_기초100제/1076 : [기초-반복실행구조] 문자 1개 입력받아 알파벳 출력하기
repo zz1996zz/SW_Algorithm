@@ -1,0 +1,8 @@
+a=input()
+
+b=ord(a)
+c=ord('a')
+
+while c<=b:
+    print(chr(c),end=' ')
+    c+=1
