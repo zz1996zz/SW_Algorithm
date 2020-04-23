@@ -20,7 +20,27 @@ collections.Counter()은 컨테이너에 동일한 값의 자료가 몇 개인�
 결과값은 dictionary 형태로 출력된다.
 ```python
 import collections  
+
 list = ['a','a','b','b','c']  
 print(collections.Counter(list))  
+
+결과값
 Counter({'a': 2, 'b': 2, 'c': 1})
 ```
+collections.Counter()는 산술/집합 연산이 가능하다.  
+```python
+import collections
+
+a=collections.Counter(['a','a','b','b','c'])
+b=collections.Counter('banana')
+
+print(a)
+print(b)
+print(a+b)
+
+결과값
+Counter({'a': 2, 'b': 2, 'c': 1})
+Counter({'a': 3, 'n': 2, 'b': 1})
+Counter({'a': 5, 'b': 3, 'n': 2, 'c': 1})
+```
+자세한 내용은 [바로가기](https://excelsior-cjh.tistory.com/94?category=966334) 
