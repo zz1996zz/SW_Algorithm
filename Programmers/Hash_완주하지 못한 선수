@@ -1,5 +1,4 @@
 # 1차 시도
-
 def solution(participant, completion):
     answer = ''
     for i in range(len(participant)):
@@ -23,5 +22,17 @@ def solution(participant, completion):
             else:
                 return answer
                 
-# 제출 결과 : 정확성 50.0, 효율성 0 -> 1차에서 불필요한 for문 2개를 지우고 최대한 간단하게 코딩해보았지만 
-#            5개 테스트 결과 모두 시간 초과로 실패 
+# 제출 결과 : 정확성 50.0, 효율성 0 
+#1차에서 불필요한 for문 2개를 지우고 최대한 간단하게 코딩해보았지만 5개 테스트 결과 모두 시간 초과로 실패 
+
+# 3차 시도
+import collections
+
+def solution(participant, completion):
+    answer = collections.Counter(participant) - collections.Counter(completion)
+    return list(answer.keys())[0]
+    
+# 제출 결과 : 정확성 50.0, 효율성 50.0 성공!
+# 다른 코드를 생각해보아도 시간 초과를 해결할 수 없어서 인터넷에서 검색하여 이러한 방법이 있는 것을 알게됨
+# 그 후 collections.Counter()와 hash() 함수를 공부함.
+# python이 c/c++에 비해 동작속도가 느리지만 시간초과를 해결하기 위해 공부를 더 
