@@ -1,0 +1,14 @@
+def solution(participant, completion):
+    answer = ''
+    for i in range(len(participant)):
+        for j in range(len(completion)):
+            if participant[i]==completion[j]:
+                participant[i]='None'
+                completion[j]='None'
+                break
+    for k in participant:
+        if k!='None':
+            answer=k
+    return answer
+    
+    # 제출 결과 : 정확성 50.0, 효율성 0.
