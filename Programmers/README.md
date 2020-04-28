@@ -97,3 +97,30 @@ print(d_sorted2)
 ```
 
 자세한 내용은 [바로가기](https://excelsior-cjh.tistory.com/100) 
+
+## 4. functools.reduce()
+reduce()는 아래와 같은 매개변수를 갖는다.
+```python
+reduce(function, iterable, initializer=None)
+```
+function에는 람다식 함수나 정해준 함수가 들어가고, iterable에는 계산할 리스트가 입력됩니다.  
+예를 들면
+```python
+from functools import reduce
+
+result = reduce(lambda x,y : x+y, [1, 2, 3, 4, 5]) # ((((1+2)+3)+4)+5)
+print(result)
+
+결과값
+15
+```
+initializer에 값을 넣어주게 되면 아래와 같이 계산된다.
+```python
+from functools import reduce
+
+result = reduce(lambda x,y : x+y, [1, 2, 3, 4, 5], 100) #  ((((100+1)+2)+3)+4)+5)
+print(result)
+
+결과값
+115
+```
