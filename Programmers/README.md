@@ -98,7 +98,7 @@ print(d_sorted2)
 
 자세한 내용은 [바로가기](https://excelsior-cjh.tistory.com/100) 
 
-## 4. functools.reduce()
+## 4. reduce()
 reduce()는 아래와 같은 매개변수를 갖는다.
 ```python
 reduce(function, iterable, initializer=None)
