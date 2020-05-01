@@ -1,0 +1,5 @@
+word = input().split(', ')
+word.sort()
+for i in word[:-1]:
+    print("{0}" .format(i),end=', ')
+print(word[-1])
