@@ -1,0 +1,3 @@
+def Maxnum(*num):
+    print("max{0} => {1}" .format(num, max(num)))
+Maxnum(3,5,4,1,8,10,2)
