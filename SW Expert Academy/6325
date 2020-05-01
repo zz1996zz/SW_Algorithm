@@ -1,0 +1,9 @@
+def func(nlist,a):
+    if a in nlist:
+        print("{0} => True" .format(a))
+    else:
+        print("{0} => False" .format(a))
+nlist=[2,4,6,8,10]
+print(nlist)
+func(nlist,5)
+func(nlist,10)
