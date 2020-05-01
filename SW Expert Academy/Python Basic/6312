@@ -1,0 +1,9 @@
+def func(*num):
+    answer=1
+    for i in num:
+        if i==str(i):
+            return print("에러발생")
+        else:
+        	answer*=i
+    return print(answer)
+func(1,2,'3',4)
