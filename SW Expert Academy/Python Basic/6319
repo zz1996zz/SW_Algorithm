@@ -9,4 +9,4 @@ def palindrome(word):
         print(nword)
         print("입력하신 단어는 회문(Palindrome)이 아닙니다.")
 word=input()
-palindrome(word) 
+palindrome(word)  
