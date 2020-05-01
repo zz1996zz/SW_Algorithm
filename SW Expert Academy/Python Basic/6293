@@ -1,0 +1,6 @@
+import math
+
+nlist=[int(i)*math.pi*2 for i in input().split(', ')]
+for j in nlist[:-1]:
+    print("{0:.2f}" .format(j), end=', ')
+print("{0:.2f}" .format(nlist[-1]))
