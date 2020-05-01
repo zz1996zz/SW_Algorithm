@@ -1,0 +1,4 @@
+nlist=[]
+for i in range(5):
+    nlist.append(int(input()))
+print("입력된 값 {0}의 평균은 {1}입니다." .format(nlist, sum(nlist)/len(nlist)))
