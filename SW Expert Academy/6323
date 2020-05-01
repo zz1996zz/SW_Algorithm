@@ -1,0 +1,10 @@
+def Pivo(num):
+    nlist=[]
+    for i in range(num):
+        if i==0 or i==1:
+            nlist.append(1)
+        else:
+            nlist.append(nlist[i-2]+nlist[i-1])
+    return nlist
+num=int(input())
+print(Pivo(num))
