@@ -1,0 +1,8 @@
+def winner(n1,n2):
+    if n1=='가위' and n2=='바위':
+        print("바위가 이겼습니다!")
+c1=input()
+c2=input()
+a1=input()
+a2=input()
+winner(a1,a2)
