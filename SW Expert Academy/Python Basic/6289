@@ -1,0 +1,3 @@
+nlist=list(input())
+alist=[int(x) for x in nlist]
+print(sum(alist))
