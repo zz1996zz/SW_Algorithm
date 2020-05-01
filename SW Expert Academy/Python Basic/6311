@@ -1,0 +1,5 @@
+from collections import Counter
+alpha="ADCBBBBCABBCBDACBDCAACDDDCAABABDBCBCBDBDBDDABBAAAAAAADADBDBCBDABADCADC"
+dic=dict(Counter(alpha))
+result=(dic['A']*4) + (dic['B']*3) + (dic['C']*2) + (dic['D']*1)
+print(result)
