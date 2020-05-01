@@ -1,0 +1,3 @@
+nlist=[1,1]
+[nlist.append(nlist[i-2]+nlist[i-1]) for i in range(2,10)]
+print(nlist)
