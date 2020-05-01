@@ -1,0 +1,3 @@
+a,b=map(int,input().split(','))
+nlist=[[x*y for y in range(b)] for x in range(a) ]
+print(nlist)
