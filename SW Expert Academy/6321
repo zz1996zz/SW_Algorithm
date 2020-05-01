@@ -9,4 +9,4 @@ def PrimeNumber(num):
         print("소수입니다.")
             
 num=int(input())
-PrimeNumber(num)
+PrimeNumber(num) 
