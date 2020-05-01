@@ -1,0 +1,8 @@
+def func(a):
+    answer=1
+    for i in range(1,a+1):
+        answer*=i
+    return answer
+
+a=int(input())
+print(func(a))
