@@ -4,5 +4,5 @@ def winner(n1,n2):
 c1=input()
 c2=input()
 a1=input()
-a2=input()
+a2=input() 
 winner(a1,a2)
