@@ -1,0 +1,2 @@
+a=[[num*i for i in range(1,10) if i%3 != 0 and i%7 != 0] if num%3 != 0 and num%7 != 0 else [] for num in range(2,10)]
+print(a)
