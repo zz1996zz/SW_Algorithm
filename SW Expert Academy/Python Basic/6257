@@ -1,0 +1,3 @@
+fruit = ['   apple    ','banana','  melon']
+fruit_dic={k.strip() : len(k.strip()) for k in fruit}
+print(fruit_dic)
