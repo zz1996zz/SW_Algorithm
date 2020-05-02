@@ -123,3 +123,34 @@ print(result)
 결과값
 115
 ```
+
+## 5. 문자열 공백 제거
+문자열 속에 있는 공백을 제거하기 위해서는 strip(), replace(), join().split()이 있다.  
+1) strip()함수는 문자열의 양쪽 공백을 모두 제거해주는 함수이다.  
+문자열의 왼쪽 공백만 제거하려면 lstrip(), 오른쪽 공백만 제거하려면 rstrip()을 사용하면 된다.
+```python
+word='   apple'
+word.lstrip()
+>>>'apple'
+
+word='grape   '
+word.rstrip()
+>>>'grape'
+
+word='   orange   '
+word.strip()
+>>>'orange'
+```
+2) replace()함수는 어떤 문자를 다른 문자로 교체해주는 함수이다.
+```python
+word='   apple   '
+word.replace(' ', '')
+>>>'apple'
+```
+3) join()함수와 split()함수는 아래와 같이 사용하면 중복된 공백이 제거된다.
+```python
+word='apple  grape  orange'
+' '.join(word.split())
+>>>'apple grape orange'
+```
+결과값과 같이 2개의 공백이 1개로 줄어들었다.
