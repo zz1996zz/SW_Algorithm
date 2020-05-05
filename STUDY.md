@@ -154,3 +154,85 @@ word='apple  grape  orange'
 >>>'apple grape orange'
 ```
 결과값과 같이 2개의 공백이 1개로 줄어들었다.
+
+## 6. enumerate
+enumerate함수는 내장함수로 iterater객체(list, set, dictionary등)을 입력으로 받아 인덱스 값을 포함하는 enumerate 객체를 리턴한다.  
+enumerate함수를 사용하여 출력하면, 인덱스와 값이 튜플 타입으로 출력된다.
+```python
+a=['a','b','c','d']
+for i in enumerate(a):
+    print(i, type(i))
+
+결과값
+(0, 'a') <class 'tuple'>
+(1, 'b') <class 'tuple'>
+(2, 'c') <class 'tuple'>
+(3, 'd') <class 'tuple'>
+```
+인덱스와 값을 따로 받을 수 있다.
+```python
+a=['a','b','c','d']
+for index, value in enumerate(a):
+    print(index, ":", value)
+
+결과값
+0 : a
+1 : b
+2 : c
+3 : d
+```
+딕셔너리를 enumerate함수를 사용해서 출력하면 아래와 같이 출력된다.
+```python
+b={'이름':'이정수','나이':'25','성별':'남자'}
+for i,key in enumerate(b):
+  	print(i,':',key,b[key])
+
+결과값
+0 : 이름 이정수
+1 : 나이 25
+2 : 성별 남자
+```
+## 7. operator.itemgetter()
+딕셔너리에 입력된 key, value를 정렬할 때는 sorted()함수를 사용한다. 하지만 딕셔너리를 정렬할 수는 없기 때문에  
+items()를 사용하여 key와 value를 튜플로 구성한 리스트를 정렬한다. 정렬을 해보면 아래와 같다.
+```python
+dic={'a':3,'b':5,'c':7,'db':2,'da':2}
+sortedDic=sorted(dic.items())
+print(sortedDic)
+
+결과값
+[('a', 5), ('b', 3), ('c', 7), ('da', 2), ('db', 2)]
+```
+위의 결과값은 key에 의해 정렬이 된 상태이다. 하지만 value에 의해 정렬을 원할 때가 있을 것이다.  
+그때는 operator모듈의 itemgetter()함수를 사용하면 value로 정렬을 할 수 있다.
+```python
+from operator import itemgetter
+
+dic={'a':3,'b':5,'c':7,'db':2,'da':2}
+sortedDic=sorted(dic.items(), key=itemgetter(1))
+print(sortedDic)
+
+결과값
+[('db', 2), ('da', 2), ('a', 3), ('b', 5), ('c', 7)]
+```
+key=itemgetter(1)을 사용하여 value에 의한 정렬을 하였다.  
+itemgetter(1)은 dic.items()의 튜플의 0번째가 아닌 1번째를 key로 잡고 정렬을 하겠다는 것이다.  
+그래서 위와같은 결과가 나오게 된것이다.  
+결과값을 보면 'db'와 'da'는 같은 value를 갖는다. 하지만 'da'가 'db'보다는 사전적으로는 앞에 있어야한다.  
+이 문제를 해결하기 위해서는 itemgetter(1, 0)로 변경하여 입력해주면 해결된다.  
+
+itemgetter(1,0)은 일단 튜플의 1번째를 기준으로 정렬을 하고, 같은 값이 나오게 되면, 0번째를 기준으로 정렬을 한다는 것이다.
+지금까지 정렬은 오름차순으로 정렬을 했다. 내림차순으로 정렬을 하려면 reverse=True를 넣어주면 된다.
+```python
+from operator import itemgetter
+
+dic={'a':3,'b':5,'c':7,'db':2,'da':2}
+sortedDic=sorted(dic.items(), key=itemgetter(1,0), reverse=True)
+print(sortedDic)
+
+결과값
+[('c', 7), ('b', 5), ('a', 3), ('db', 2), ('da', 2)]
+```
+## 8. collections.defaultdict()
+defaultdict()함수의 설명은 아래 링크에 자세하게 나와있으니 저기서 보고 깨우칠 
+[바로가기](https://excelsior-cjh.tistory.com/95) 
