@@ -1,0 +1,12 @@
+class test:
+    def __init__(self,korean,english,math):
+        self.korean=korean
+        self.english=english
+        self.math=math
+    def sum(self):
+        sumNum=self.korean+self.english+self.math
+        return sumNum
+
+a,b,c=map(int,input().split(','))
+test=test(a,b,c)
+print("국어, 영어, 수학의 총점: {0}" .format(test.sum()))
