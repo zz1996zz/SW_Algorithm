@@ -1,0 +1,7 @@
+class Korean:
+    def printNationality(self):
+        print("대한민국")
+        
+kr=Korean()
+kr.printNationality()
+kr.printNationality()
