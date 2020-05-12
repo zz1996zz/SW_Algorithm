@@ -1,0 +1,9 @@
+class Rectangle:
+    def __init__(self,hor,ver):
+        self.hor=hor
+        self.ver=ver
+        
+    def cal(self):
+        print("사각형의 면적: {0}" .format(self.hor*self.ver))
+a=Rectangle(5,4)
+a.cal()
