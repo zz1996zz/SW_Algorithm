@@ -1,0 +1,30 @@
+def MakeGraph(nV,nE):
+    graph={key+1 : set() for key in range(nV)}
+    for i in range(nE):
+        key, val = map(int, input().split())
+        graph[key].add(val)
+    return graph
+        
+def DFS(graph, nV,nE):
+    visited=[]
+    stack=[]
+
+    stack.append(nV)
+    answer=0
+    while stack:
+        node=stack.pop()
+        if node == nE:
+            answer=1
+            break
+        if node not in visited:
+            visited.append(node)
+            stack.extend(graph[node])
+    return answer
+    
+T = int(input())
+
+for test_case in range(1, T + 1):
+    V, E = map(int,input().split())
+    myGraph = MakeGraph(V,E)
+    S,G=map(int,input().split())
+    print('#{0} {1}' .format(test_case, DFS(myGraph,S,G)))
