@@ -1,0 +1,27 @@
+# 1차 시도
+
+from collections import deque
+def solution(bridge_length, weight, truck_weights):
+    answer = 1
+    truck_weights_deque=deque(truck_weights)
+    bridge_on_truck=deque([0]*bridge_length)
+    bridge_on_truck[-1]=truck_weights_deque.popleft()
+    
+    while truck_weights_deque:
+        if sum(bridge_on_truck)-bridge_on_truck[0]+truck_weights_deque[0] > weight:
+            bridge_on_truck.popleft()
+            bridge_on_truck.append(0)
+            answer += 1
+        else:
+            bridge_on_truck.popleft()
+            bridge_on_truck.append(truck_weights_deque.popleft())
+            answer += 1
+    answer = answer+bridge_length
+    return answer
+    
+# 제출 결과 : 정확성: 92.9 실패
+# collections.deque() 함수를 사용하여 list 보다 앞에서 값을 빼올 때 속도가 더 빠르도록 해주었다.
+# 다리의 길이만큼의 큐를 만들어주었다. 그리고 truck_weights에서 트럭의 무게를 큐에 삽입하여 시간이 1지날수록 이동하게 코드를 구성하였다.
+# 하지만, 코드를 잘 못 짜서 테스트케이스 중 1개가 시간초과가 발생하였다.
+
+# 2차 
