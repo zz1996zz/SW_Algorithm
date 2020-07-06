@@ -22,6 +22,35 @@ def solution(bridge_length, weight, truck_weights):
 # 제출 결과 : 정확성: 92.9 실패
 # collections.deque() 함수를 사용하여 list 보다 앞에서 값을 빼올 때 속도가 더 빠르도록 해주었다.
 # 다리의 길이만큼의 큐를 만들어주었다. 그리고 truck_weights에서 트럭의 무게를 큐에 삽입하여 시간이 1지날수록 이동하게 코드를 구성하였다.
-# 하지만, 코드를 잘 못 짜서 테스트케이스 중 1개가 시간초과가 발생하였다.
+# 하지만, 코드를 잘 못 짜서 테스트5가 시간초과되었다.
 
-# 2차 
+# 2차 시도
+
+from collections import deque
+def solution(bridge_length, weight, truck_weights):
+    answer = 1
+    truck_weights_deque=deque(truck_weights)
+    bridge_on_truck=deque([0]*bridge_length)
+    temp=truck_weights_deque.popleft()
+    bridge_on_truck[-1]=temp
+    nSum=temp
+    
+    while truck_weights_deque:
+        if nSum-bridge_on_truck[0]+truck_weights_deque[0] > weight:
+            temp=bridge_on_truck.popleft()
+            nSum -= temp
+            bridge_on_truck.append(0)
+            answer += 1
+        else:
+            temp=bridge_on_truck.popleft()
+            ntemp=truck_weights_deque.popleft()
+            bridge_on_truck.append(ntemp)
+            nSum = nSum - temp + ntemp
+            answer += 1
+    answer = answer+bridge_length
+    return answer
+# 제출 결과 : 정확성: 100.0 성공
+# 1차에서는 if문에서 sum()함수를 사용하여 bridge_on_truck에 있는 모든 값을 매번 더해주어 시간을 낭비하여 테스트5의 시간초과가 발생한것이었다.
+# sum(bridge_on_truck)는 O(n)의 시간복잡도를 가지기 때문에 이를 해결하고자 sum()함수를 사용하지 않고,
+# nSum 변수를 사용하여 다리위의 트럭들의 무게를 계산해주었다.
+# 그로인해 테스트5와 테스트6의 시간이 많이 줄어들었다.
