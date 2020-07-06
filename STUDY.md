@@ -235,4 +235,8 @@ print(sortedDic)
 ```
 ## 8. collections.defaultdict()
 defaultdict()함수의 설명은 아래 링크에 자세하게 나와있으니 저기서 보고 깨우칠 것  
-[바로가기](https://excelsior-cjh.tistory.com/95) 
+[바로가기](https://excelsior-cjh.tistory.com/95)  
+
+## 9. collections.deque()
+deque()함수의 설명은 아래 링크에 여러 기능이 자세히 나와있으니 링크를 통해 공부할 것.
+[바로가기](https://excelsior-cjh.tistory.com/96)  
